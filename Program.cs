@@ -2,23 +2,61 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class Task
+public class TaskItem
 {
     public int Id { get; set; }
     public string Description { get; set; }
     public string Status { get; set; }
 }
 
+//================Inheritance===============================
+class Assignment
+{
+    private int deadline = 0; //encapsulation
+
+    public int Deadline
+    {
+        get { return deadline; }
+        set{
+            if (value >= 0) //Validation
+            deadline = value;
+            else
+            Console.WriteLine("Deadline here.");
+            }
+        }
+    public void go()
+    {
+        Console.WriteLine("This is an inheritance program");
+    }
+}
+
+class Dotnet : Assignment
+{
+    public int marks = 4;
+}
+
+class Java : Assignment
+{
+    public int marks = 2;
+}
+
+//====================================================
+
 class Program
 {
-    static List<Task> tasks = new List<Task>();
+    static List<TaskItem> tasks = new List<TaskItem>();
 
     static void AddTask()
     {
-        Task task = new Task();
+        TaskItem task = new TaskItem();
 
         Console.Write("Enter ID: ");
-        task.Id = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int id))
+        {
+            Console.WriteLine("Invalid ID.");
+            return;
+        }
+        task.Id = id;
 
         Console.Write("Enter Description: ");
         task.Description = Console.ReadLine();
@@ -38,7 +76,7 @@ class Program
             return;
         }
 
-        foreach (Task task in tasks)
+        foreach (TaskItem task in tasks)
         {
             Console.WriteLine("-------------------");
             Console.WriteLine("ID: " + task.Id);
@@ -52,7 +90,7 @@ class Program
         Console.Write("Enter ID: ");
         int id = int.Parse(Console.ReadLine());
 
-        Task task = tasks.Find(t => t.Id == id);
+        TaskItem task = tasks.Find(t => t.Id == id);
 
         if (task != null)
         {
@@ -68,9 +106,13 @@ class Program
     static void DeleteTask()
     {
         Console.Write("Enter ID: ");
-        int id = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int id))
+        {
+            Console.WriteLine("Invalid ID.");
+            return;
+        }
 
-        Task task = tasks.Find(t => t.Id == id);
+        TaskItem task = tasks.Find(t => t.Id == id);
 
         if (task != null)
         {
@@ -89,8 +131,11 @@ class Program
         string search = Console.ReadLine();
 
         var results = tasks.Where(t =>
-            t.Description.Contains(search, StringComparison.OrdinalIgnoreCase) ||
-            t.Status.Contains(search, StringComparison.OrdinalIgnoreCase));
+            (t.Description != null &&
+ t.Description.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0)
+||
+(t.Status != null &&
+ t.Status.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0));
 
         if (!results.Any())
         {
@@ -111,6 +156,17 @@ class Program
 
     static void Main()
     {
+
+
+        //==============inheritance=================
+        Dotnet dotnet = new Dotnet();
+        Java java = new Java();
+
+        Console.WriteLine(dotnet.Deadline); //encapsulation
+        java.go();
+
+        //==========================================
+
         while (true)
         {
             Console.WriteLine("\n===== TASK MANAGER =====");
