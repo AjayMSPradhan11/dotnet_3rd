@@ -1,0 +1,14 @@
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.AssemblyInfoInputs.cache
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.AssemblyInfo.cs
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.csproj.CoreCompileInputs.cache
+C:\Users\ajpradhan\source\repos\dotnet_2nd\bin\Debug\net10.0\dotnet_2nd.exe
+C:\Users\ajpradhan\source\repos\dotnet_2nd\bin\Debug\net10.0\dotnet_2nd.deps.json
+C:\Users\ajpradhan\source\repos\dotnet_2nd\bin\Debug\net10.0\dotnet_2nd.runtimeconfig.json
+C:\Users\ajpradhan\source\repos\dotnet_2nd\bin\Debug\net10.0\dotnet_2nd.dll
+C:\Users\ajpradhan\source\repos\dotnet_2nd\bin\Debug\net10.0\dotnet_2nd.pdb
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.dll
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\refint\dotnet_2nd.dll
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.pdb
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\dotnet_2nd.genruntimeconfig.cache
+C:\Users\ajpradhan\source\repos\dotnet_2nd\obj\Debug\net10.0\ref\dotnet_2nd.dll
